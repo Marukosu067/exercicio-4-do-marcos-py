@@ -1,0 +1,32 @@
+lista = ("mlk gente boa", "batizado as 23hrs", "capacete de baleia")
+print("Caso queira saber oque ja se encontra na lista tecle S, caso contrario N")
+if input() == "S":
+  print(lista)
+else:
+  print("Agora temos as opções de ")
+  while True:
+    print("1. Adicionar conteudo")
+    print("2. Remover conteudo")
+    print("3. Ver lista")
+    print("4. Sair")
+    opcao = input("Digite sua opção: ")
+    if opcao == "1":
+      conteudo = input("Digite o conteudo a ser adicionado: ")
+      lista = lista + (conteudo,)
+      print("Item adicionado com sucesso!")
+    elif opcao == "2":
+      print(lista)
+      indice = int(input("Digite o índice do item a ser removido (começando em 0): "))
+      if 0 <= indice < len(lista):
+        lista_temp = list(lista)
+        lista_temp.pop(indice)
+        lista = tuple(lista_temp)
+        print("Item removido com sucesso!")
+      else:
+        print("Índice inválido!")
+    elif opcao == "3":
+      print(lista)
+    elif opcao == "4":
+      break
+    else:
+      print("Opção inválida!")
